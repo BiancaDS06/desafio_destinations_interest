@@ -3,23 +3,25 @@ import { useEffect, useState } from 'react';
 import InputMask from 'react-input-mask';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import Swal from 'sweetalert2';
+import contriesResponse from '../models/countriesResponse';
+import citiesResponse from '../models/citiesResponse';
+import userData from '../models/userData';
 
-type contriesResponse = {
-    code: string;
-    name: string;
-    name_ptbr: string;
-};
-
-type citiesResponse = {
-    id: number;
-    code: string;
-    name_ptbr: string;
-};
+const schema = yup.object().shape({
+    name: yup.string().required(),
+    email: yup.string().email().required(),
+    phone: yup.string().required(),
+    cpf: yup.string().required(),
+    country: yup.string().required(),
+    city: yup.string().required(),
+});
 
 function Destinations() {
 
-    const {register, handleSubmit} = useForm();
+    const {register, handleSubmit} = useForm<userData>({ resolver: yupResolver(schema) });
     
     const onSubmit = (e: any) => {
         console.log(e)
@@ -62,19 +64,19 @@ function Destinations() {
                     <h5 className="mb-3">Dados pessoais</h5>
                     <div className="mb-3">
                         <label className="form-label data-company">Nome</label>
-                        <input className="form-control" type="text" {...register("name")} placeholder='digite seu nome' />
+                        <input className="form-control" type="text" {...register("name", { required: true })} placeholder='digite seu nome' required />
                     </div>
                     <div className="mb-3">
                         <label className="form-label data-company">E-mail</label>
-                        <input className="form-control" type="text" {...register("email")} placeholder='fulano@email.com' />
+                        <input className="form-control" type="email" {...register("email", { required: true })} placeholder='fulano@email.com' required />
                     </div>
                     <div className="mb-3">
                         <label className="form-label data-company">Telefone</label>
-                        <InputMask className="form-control" type="text" {...register("phone")}  placeholder="(00) 00000-0000" mask='(99) 99999-9999' ></InputMask>
+                        <InputMask className="form-control" type="text" {...register("phone", { required: true })}  placeholder="(00) 00000-0000" mask='(99) 99999-9999' required></InputMask>
                     </div>
                     <div className="mb-3">
                         <label className="form-label data-company">CPF</label>
-                        <InputMask className="form-control" type="text" {...register("cpf")}  placeholder="000.000.000-00" mask='999.999.999-99' ></InputMask>
+                        <InputMask className="form-control" type="text" {...register("cpf", { required: true })}  placeholder="000.000.000-00" mask='999.999.999-99' required></InputMask>
                     </div>
                 </div>
 
@@ -84,7 +86,7 @@ function Destinations() {
                     <h5 className="mb-3">Destinos de interesse</h5>
                     <div className="mb-3">
                         <label className="form-label data-company">País</label>
-                        <select {...register("country")} className="form-select data-company" >
+                        <select {...register("country", { required: true })} className="form-select data-company" required>
                             <option value="0">Selecione o país</option>
                             {countries.map((country) => (
                                 <option  value={country.code}>
@@ -95,7 +97,7 @@ function Destinations() {
                     </div>
                     <div className="mb-3">
                         <label className="form-label data-company">Cidade</label>
-                        <select {...register("city")} className="form-select data-company" >
+                        <select {...register("city", { required: true })} className="form-select data-company" required>
                             <option value="0">Selecione a cidade</option>
                             {cities.map((city) => (
                                 <option value={city.name_ptbr}>
