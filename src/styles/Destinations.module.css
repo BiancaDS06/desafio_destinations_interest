@@ -24,15 +24,17 @@
   justify-content: center;
 }
 
+.headerDestinationsLogo img {
+  width: 6.5em;
+  height: 6.5em;
+}
+
 .mainRegister {
-  margin-top: 4em;
-  margin-bottom: 4em;
-  display: flex;
-  justify-content: center;
+  margin: 4em;
 }
 
 .lineOne {
-  border-left: 2px solid #c3cfd9;
+  border-left: 2px solid #9eadba;
   width: 0;
   margin-left: 1.6em;
 }

@@ -23,14 +23,15 @@ function Destinations() {
 
     const {register, handleSubmit} = useForm<userData>({ resolver: yupResolver(schema) });
     
-    const onSubmit = (e: any) => {
-        console.log(e)
+    const onSubmit = (e: userData) => {
         Swal.fire({
             icon: 'success',
             title: 'Destino de interesse enviado com sucesso',
             showConfirmButton: false,
             timer: 1500
           });
+        console.log(e)
+        
 
     }
 
@@ -53,7 +54,7 @@ function Destinations() {
     <div>
         <header className={styles.headerDashboard}>
             <div className={styles.headerDestinationsLogo}>
-                <a href='https://github.com/'><img src="./Senhor-Viagens.png" alt="logoDestino"/></a>
+                <img src="./Senhor-Viagens.png" alt="logoDestino"/>
                 <h1>Destinos de interesse</h1>
             </div>
         </header>
