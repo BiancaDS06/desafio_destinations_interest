@@ -1,0 +1,50 @@
+.headerDashboard {
+    align-items: center;
+    background-color: #c3cfd9;
+    border-top: 2.4em solid #9eadba;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2em 3.1em;
+  }
+.headerDashboard img {
+  height: 80px;
+  width: 80px;
+
+}
+.headerDashboard h1 {
+  color: #2c88d9;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 10px;
+}
+  
+.headerDestinationsLogo {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.mainRegister {
+  margin-top: 4em;
+  margin-bottom: 4em;
+  display: flex;
+  justify-content: center;
+}
+
+.lineOne {
+  border-left: 2px solid #c3cfd9;
+  width: 0;
+  margin-left: 1.6em;
+}
+.btnSend {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1.9em;
+}
+.btnSend button {
+  padding: 5px 30px;
+}
+.dataCompany {
+  font-size: 15px;
+  font-weight: bold;
+}
