@@ -81,7 +81,7 @@ function Destinations() {
                 <span className={styles.lineOne}></span>
 
                 <div className="col card p-4">
-                    <h3 className="mb-3">Destinos de interesse</h3>
+                    <h5 className="mb-3">Destinos de interesse</h5>
                     <div className="mb-3">
                         <label className="form-label data-company">País</label>
                         <select {...register("country")} className="form-select data-company" >
