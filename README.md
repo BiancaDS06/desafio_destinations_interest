@@ -1,3 +1,25 @@
+<h1 align="center">Destinos de interesses</h1>
+
+![image](https://user-images.githubusercontent.com/97123676/198894550-d7e980e7-b5d2-4136-a3af-44b36bb92183.png)
+
+
+### :rocket: Technologies
+- React 
+- Biblioteca Bootstrap
+- React-hook-form e yup (validação de formulário)
+- Axios
+- Lib Sweetalert2
+
+---
+
+<div align="center">
+<p><i>Developed by <a href="https://www.linkedin.com/in/bianca-dias-372a321a2/">Bianca D Siqueira Martins</i></p>
+</div>
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
