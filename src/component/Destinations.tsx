@@ -21,16 +21,17 @@ const schema = yup.object().shape({
 
 function Destinations() {
 
-    const {register, handleSubmit} = useForm<userData>({ resolver: yupResolver(schema) });
+    const {register, handleSubmit, reset} = useForm<userData>({ resolver: yupResolver(schema) });
     
     const onSubmit = (e: userData) => {
+        console.log(e);
         Swal.fire({
             icon: 'success',
             title: 'Destino de interesse enviado com sucesso',
             showConfirmButton: false,
             timer: 1500
           });
-        console.log(e)
+          reset();
         
 
     }
@@ -110,6 +111,7 @@ function Destinations() {
                 </div>
                 <div className={styles.btnSend} >
                     <button className="btn btn-primary" type="submit">Enviar</button>
+                    <input type="reset" className='btn btn-primary' value="Limpar formulário"/>
                 </div>
             </form>
         </main>
