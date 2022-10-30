@@ -89,7 +89,7 @@ function Destinations() {
                     <div className="mb-3">
                         <label className="form-label data-company">País</label>
                         <select {...register("country", { required: true })} className="form-select data-company" required>
-                            <option value="0">Selecione o país</option>
+                            <option value="">Selecione o país</option>
                             {countries.map((country) => (
                                 <option  value={country.code}>
                                 {country.name_ptbr}
@@ -100,7 +100,7 @@ function Destinations() {
                     <div className="mb-3">
                         <label className="form-label data-company">Cidade</label>
                         <select {...register("city", { required: true })} className="form-select data-company" required>
-                            <option value="0">Selecione a cidade</option>
+                            <option value="">Selecione a cidade</option>
                             {cities.map((city) => (
                                 <option value={city.name_ptbr}>
                                 {city.name_ptbr}
