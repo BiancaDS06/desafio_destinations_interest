@@ -13,7 +13,7 @@
 ---
 
 <div align="center">
-<p><i>Developed by <a href="https://www.linkedin.com/in/bianca-dias-372a321a2/">Bianca D Siqueira Martins</i></p>
+<p><i>Developed by <a target="_blank " href="https://www.linkedin.com/in/bianca-dias-372a321a2/">Bianca D Siqueira Martins</i></p>
 </div>
 
 
